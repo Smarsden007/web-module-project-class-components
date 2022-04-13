@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
 
 export default class App extends React.Component {
   constructor(){
@@ -6,12 +7,17 @@ export default class App extends React.Component {
     this.state = {
       todos: [
         {
-          name: 'Organize Garage',
+          task: 'Organize Garage',
           id: 1528817077286,
           completed: false
         },
         {
-          name: 'Bake Cookies',
+          task: 'Bake Cookies',
+          id: 1528817084358,
+          completed: false
+        },
+        {
+          task: 'Organize Desk',
           id: 1528817084358,
           completed: false
         }
@@ -20,7 +26,7 @@ export default class App extends React.Component {
   }
   render() {
     const { todos } = this.state;
-    // console.log(todos);
+    console.log(todos);
     return (
       <div>
         <ul>
@@ -29,7 +35,7 @@ export default class App extends React.Component {
               return (<li>{todo.task} { todo.completed?<span>- completed</span> : <span></span>} </li>)
             })
           }
-          <li>walk the dog</li>
+          
         </ul>
 
         <form>
