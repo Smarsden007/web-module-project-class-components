@@ -6,24 +6,12 @@ export default class TodoList extends React.Component {
     return (<ul>
     {
       this.props.todos.map(todo=> {
-        return (<Todo todo={todo}/>)
+        return (<Todo handleToggle={this.props.handleToggle}todo={todo}/>)
       })
     }
     
-  </ul>)
+  </ul>);
   }
 }
 
 
-// class TodoList extends React.Component {
-//   render() {
-//     return (<ul>
-//     {
-//       this.props.todos.map(todo=> {
-//         return (<Todo todo={todo}/>)
-//       })
-//     }
-    
-//   </ul>)
-//   }
-// }
