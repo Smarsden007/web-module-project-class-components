@@ -1,21 +1,29 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 import { useState } from 'react';
-import Todo from '../components/Todo'
+import TodoList from './TodoList'
+import Form from './Form'
+
+
 
 // as a freindly reminder you can also build comps out here to test and move to specific pages, example below.
 
-class TodoList extends React.Component {
-  render() {
-    return (<ul>
-    {
-      this.props.todos.map(todo=> {
-        return (<Todo todo={todo}/>)
-      })
-    }
+// class TodoList extends React.Component {
+//   render() {
+//     return (<ul>
+//     {
+//       this.props.todos.map(todo=> {
+//         return (<Todo todo={todo}/>)
+//       })
+//     }
     
-  </ul>)
-  }
-}
+//   </ul>)
+//   }
+// }
+// class Form extend React.component {
+//   render()
+//   return
+// }
 
 export default class App extends React.Component {
   constructor(){
@@ -46,6 +54,11 @@ export default class App extends React.Component {
           task: 'Mow the Lawn',
           id: 1528817084358,
           completed: false
+        },
+        {
+          task: 'Mow the Lawn',
+          id: 1528817084358,
+          completed: false
         }
       ]
     }
@@ -56,11 +69,7 @@ export default class App extends React.Component {
     return (
       <div>
      <TodoList todos={todos}/>
-        <form>
-          <input/>
-          <button>Add</button>
-        </form>
-
+       <Form />
         <button>Clear</button>
       </div>
     )
